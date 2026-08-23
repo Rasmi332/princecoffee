@@ -1,27 +1,324 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
 
-  </head>
-  <body>
+  <title>Prince Coffee House</title>
 
-    <h1>Hello</h1>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <input type="checkbox">
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      background: #ffffff;
+      color: #08090d;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-    <button style=":active color:red;">Click Me</button>
+    body {
+      min-height: 100svh;
+      display: flex;
+      justify-content: center;
+    }
 
-    <ul>
-      <li class="list">
-        <a href="https://www.google.com">Google</a>
-      </li>
-      <li class="list">Second</li>
-      <li class="list">Third</li>
-    </ul>
+    .page {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100svh;
 
-  </body>
+      padding: 32px 24px 26px;
 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* =========================
+       LOGO / HEADER
+    ========================= */
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding-top: 18px;
+    }
+
+   .logo {
+  width: 90px;          /* Adjust this number (e.g., 60px - 80px) to set exact size */
+  max-width: 35vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+    .tagline {
+      margin-top: 18px;
+
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      color: #777;
+    }
+
+    /* =========================
+       BUTTON AREA
+    ========================= */
+
+    .buttons {
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    .button {
+      position: relative;
+
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+
+      border-radius: 6px;
+
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .button:active {
+      transform: scale(0.975);
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu-button {
+      height: 150px;
+
+      background: #08090d;
+      color: #ffffff;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 36px;
+      font-weight: 400;
+
+      letter-spacing: 7px;
+      text-transform: uppercase;
+
+      border: 1px solid #08090d;
+    }
+
+    .menu-button::after {
+      content: "VIEW OUR MENU";
+
+      position: absolute;
+      bottom: 25px;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 3px;
+
+      opacity: 0.55;
+    }
+
+    .menu-button:hover {
+      background: #1b1c20;
+    }
+
+    /* =========================
+       SMALL BUTTONS
+    ========================= */
+
+    .small-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 12px;
+    }
+
+    .small-button {
+      height: 76px;
+
+      background: #ffffff;
+      color: #08090d;
+
+      border: 1px solid #d8d8d8;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .small-button:hover {
+      background: #08090d;
+      color: #ffffff;
+      border-color: #08090d;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      text-align: center;
+
+      padding-top: 30px;
+
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      color: #a0a0a0;
+    }
+
+    /* =========================
+       SMALL PHONES
+    ========================= */
+
+    @media (max-height: 700px) {
+
+      .page {
+        padding-top: 20px;
+        padding-bottom: 18px;
+      }
+
+      .header {
+        padding-top: 5px;
+      }
+
+      .logo {
+        width: min(82vw, 320px);
+      }
+
+      .tagline {
+        margin-top: 12px;
+      }
+
+      .buttons {
+        margin-top: 30px;
+      }
+
+      .menu-button {
+        height: 125px;
+        font-size: 30px;
+      }
+
+      .small-button {
+        height: 62px;
+      }
+
+      .menu-button::after {
+        bottom: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+      <!-- Put the uploaded logo in the same folder as this file
+           and name it: logo.png -->
+
+      <img
+        src="logo.png"
+        alt="Prince Coffee House"
+        class="logo"
+      />
+
+      <div class="tagline">
+        Coffee · Breakfast · House
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         BUTTONS
+    ========================== -->
+
+    <section class="buttons">
+
+      <!-- MENU -->
+
+      <a
+        href="https://princecafehouse.couvertmenu.com/Home"
+        class="button menu-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Menu
+      </a>
+
+
+      <!-- GOOGLE + INSTAGRAM -->
+
+      <div class="small-buttons">
+
+        <a
+          href="https://maps.app.goo.gl/MB2hnJtK8xRnsFdd6"
+          class="button small-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Reviews
+        </a>
+
+
+        <a
+          href="https://www.instagram.com/princecoffeehouseistanbul/?hl=en"
+          class="button small-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+      Prince Coffee House
+    </footer>
+
+  </main>
+
+</body>
 </html>
